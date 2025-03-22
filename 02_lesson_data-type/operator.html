@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1 class="test">test</h1>
+
+    <script>
+
+        // Оператори
+        // true && true умовна "І"
+        // || умовна "Или"
+        // > більше
+        // >= більше і дорівнює
+        // < меньше
+        // == Порівняння начень
+        // === Порівняня Значення і типу данних
+
+        // if(){}
+        // else if() {}
+        // else {}
+
+        console.log("2" == 2);
+        console.log("2" === 2);
+
+
+        // if(){}else{}
+
+        // якщо тут true
+        if ("2" === 2) {
+            // Потрапляємо сюди
+            console.log("я тут");
+        } else if ("2" == 2) {
+            console.log("я тут: else if");
+        }
+        else {
+            console.log("Помилка");
+        }
+
+
+        // Приклад 
+
+        let name = "Sasha"
+        let age = prompt
+
+
+        if (age >= 4 && age <= 16) {
+            console.log("Вам Доступні Фільми 4 - 16років");
+        } else if (age > 16 && age < 18) {
+            console.log("Вам Доступні Фільми 16років");
+        }
+        else {
+            console.log('Немає для вас Фільмів');
+        }
+
+
+
+
+        if (document.querySelector('.test')) {
+            document.querySelector('.test').innerHTML += " Sasha"
+        }
+
+
+
+        // Switch
+
+        let item = 'Iphone'
+
+        switch (item) {
+            case 'Iphone':
+                console.log('Iphone: 1300$')
+                break;
+            case 'Samsung':
+                console.log('Samsung: 1000$')
+                break;
+            default:
+                console.log('Немає в наявності')
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
