@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="cart">0</button>
+
+    <div class="out">
+
+    </div>
+
+
+    <button class="btn">Start</button>
+    <button class="btn">Submit</button>
+    <button class="btn">to d </button>
+    <button class="btn">to d </button>
+    <button class="btn">to d </button>
+    <button class="btn">to d </button>
+    <button class="btn">to d </button>
+    <button class="btn">to d </button>
+    <button class="btn">to d </button>
+    <script>
+
+        // i++ Інкримент
+        // i-- Декримент
+
+        // ++i пост Інкримент
+        // --i пост Декримент
+
+
+        // 1 - 10
+        // старт / стон / крок
+
+
+        // for (let i = 1; i <= 10; i++) {
+        //     console.log(i);
+        // }
+
+        // Якщо continue після того як знайшли пропускаємо
+        for (let i = 1; i <= 10; i++) {
+            if (i == 3) {
+                console.log("Знайшли: " + i);
+                continue
+            }
+            console.log(i);
+        }
+
+        // Якщо break після того як знайшли зупиняемось
+        for (let i = 1; i <= 10; i++) {
+            if (i == 3) {
+                console.log("Знайшли: " + i);
+                break;
+            }
+            console.log(i);
+        }
+
+        // Якщо Парні І Не парні
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2) {
+                console.log('непарні: ' + i);
+            } else {
+                console.log('парні: ' + i);
+            }
+        }
+
+        // Зворотній відлік
+        for (let i = 10; i > 1; i--) {
+            console.log(i);
+        }
+
+        let btn = document.querySelectorAll('.btn')
+
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = () => {
+                console.log("Привіт я кнопка: " + i);
+            }
+        }
+
+
+        let user = ['sasha', 'olha', 'kolya', 'sv']
+        let out = document.querySelector('.out')
+        let cart = document.querySelector('.cart')
+
+        cart.innerHTML = user.length;
+
+        for (let i = 0; i < user.length; i++) {
+            console.log(user[i]);
+            out.innerHTML += ` <p><b>Привіт </b> ${user[i]} </p>`
+        }
+
+        // 1: тип данних log(user)
+        // 2: Зробити цикл з довжиною масиву user.length
+
+
+        // Для масивів
+        // user.map(item => {
+        //     console.log(item)
+        // })
+
+        // Для статики
+        // btn.forEach(item => {
+        //     console.log(item)
+        // })
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
