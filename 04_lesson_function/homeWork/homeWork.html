@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="test">
+        Вивіж Гравців
+        <select class="sel">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+        <button class="btn">Show</button>
+        <button class="res">Reset</button>
+
+        <span>Пошук: </span>
+        <input class="inp2" type="text" placeholder="Name">
+        <button class="serch">Search</button>
+    </div>
+
+
+    <ul class="out">
+    </ul>
+
+
+    <script>
+
+        // Завдання
+        // 1: Кнопка Resset очищуемо .out
+        // 2: Реалызувати пошук if(inp.value ===)
+
+        // "Екстра"
+        // Варыант 2 Sasha.png Sveta.png <li> test(users[i])
+
+
+        let out = document.querySelector('.out')
+        let btn = document.querySelector('.btn')
+        let select = document.querySelector('.sel')
+
+        // ---------- 0        1        2       3       4
+        let users = ['Sasha', "Olha", 'Sveta', 'Vika', 'Kolya', 'Sasha', "Olha", 'Sveta', 'Vika', 'Kolya', 'Sasha', "Olha", 'Sveta', 'Vika', 'Kolya']
+
+
+        function test(name) {
+            return `<li>
+                     <img src="./img/${name}.png" alt="${name}">
+                     ${name}
+                </li>`;
+        }
+
+        btn.onclick = () => {
+            out.innerHTML = ""
+
+            for (let i = 0; i < +select.value; i++) {
+                out.innerHTML += test(users[i])
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

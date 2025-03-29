@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Task: 1</h2>
+    <div class="calc">
+        <input class="inp1" type="number">
+        <select class="select">
+            <option value="*">Множити</option>
+            <option value="+">Додавати</option>
+            <option value="-">Віднімати</option>
+        </select>
+        <input class="inp2" type="number">
+        <button class="btn">Res</button>
+    </div>
+
+    <h4 class="out">
+        0
+    </h4>
+
+    <br><br>
+    <hr>
+    <br><br>
+
+
+    <script>
+
+        let inp1 = document.querySelector('.inp1')
+        let inp2 = document.querySelector('.inp2')
+        let select = document.querySelector('.select')
+        let btn = document.querySelector('.btn')
+        let out = document.querySelector('.out')
+
+
+
+        btn.onclick = () => {
+            console.log(select.value);
+            multi(inp1.value, inp2.value)
+        }
+
+        function plus(num, num2) {
+            out.innerHTML = +num + +num2;
+        }
+
+        function minus(num, num2) {
+            out.innerHTML = +num - +num2;
+        }
+
+        function multi(num, num2) {
+            out.innerHTML = +num * +num2;
+        }
+
+
+
+
+        // function calc(num) {
+        //     return 2025 - num
+        // }
+
+
+        // console.log("age " + calc(1990));
+
+
+
+
+        // function calc(num) {
+        //     let age = 2025 - num
+        //     let name = "Sasha"
+        //     console.log(name + " " + age);
+        // }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

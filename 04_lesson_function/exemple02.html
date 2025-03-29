@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="test">
+        Вивіж Гравців
+        <select class="sel">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+        <button class="btn">Show</button>
+    </div>
+
+
+    <ul class="out">
+    </ul>
+
+
+    <script>
+
+        // for(let i = 0; i < 5; i++) {
+
+        // }
+        // Дублікат повинна пиймати імя 
+        // викликаємо 5 раз
+
+
+
+        let out = document.querySelector('.out')
+        let btn = document.querySelector('.btn')
+        let select = document.querySelector('.sel')
+        // ---------- 0        1        2       3       4
+        let users = ['Sasha', "Olha", 'Sveta', 'Vika', 'Kolya', 'Sasha', "Olha", 'Sveta', 'Vika', 'Kolya', 'Sasha', "Olha", 'Sveta', 'Vika', 'Kolya']
+
+
+        function test(name) {
+            return `<li>${name}</li>`;
+        }
+
+        btn.onclick = () => {
+            out.innerHTML = ""
+
+            for (let i = 0; i < +select.value; i++) {
+                out.innerHTML += test(users[i])
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
