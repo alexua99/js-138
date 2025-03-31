@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .out {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding-top: 30px;
+        }
+
+        .item {
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>to do list</h2>
+    <input class="inp1" type="text">
+    <button class="btn1">add</button>
+    <button class="del1">del</button>
+    <div class="out">
+
+    </div>
+
+
+    <script>
+
+        // Масив 
+        let user1 = "Sasha"
+        let user2 = "Sveta"
+        ///         0         1
+        let users = ["Sasha", "Sveta", "Sasha", "Sveta last", "Sveta last 42342"]
+
+        // Перший элемент масиву
+        console.log(users[0]);
+
+        // Останный элемент масиву
+        console.log(users[users.length - 1]);
+
+
+        // Постыйно
+
+        // Додати в кынець
+        // .push()
+        users.push('New User')
+        console.log(users)
+
+        // Видалити Останній
+        // .pop()
+        users.pop()
+        console.log(users)
+
+
+
+        // Знати
+
+        // Додати на початок
+        // .unshift()
+        users.unshift('Sveta One')
+        console.log(users)
+
+        // Додати на початок
+        // .shift()
+        users.shift()
+        console.log(users)
+
+
+        // Методи Масивів
+
+        //  Для масивів в .JS
+        // .map()
+        // users.map(item => {
+        //     console.log(item);
+        // })
+
+        // для масивів в .HTML
+        // .forEach()
+        // let text = document.querySelectorAll('p')
+        // console.log(text);
+
+        // text.forEach(item => {
+        //     console.log(item);
+        // })
+
+
+
+        // Приклад
+
+
+        let inp1 = document.querySelector('.inp1')
+        let btn1 = document.querySelector('.btn1')
+        let del1 = document.querySelector('.del1')
+        let out = document.querySelector('.out')
+
+        let toDoList = []
+
+
+        function addToDoList() {
+            toDoList.map(item => {
+                out.innerHTML += `<li>${item}</li>`
+            })
+        }
+
+
+        btn1.onclick = () => {
+            out.innerHTML = ''
+            toDoList.push(inp1.value)
+
+            addToDoList()
+        }
+
+        del1.onclick = () => {
+            out.innerHTML = ''
+            toDoList.pop(inp1.value)
+
+            addToDoList()
+        }
+
+
+        // Array 
+
+        let array2 = ['Apple', 'Sasha', 'Phone', 'Apple', 'Sasha', 'Phone', 'Apple', 'Sasha', 'Phone']
+
+        // Old
+        // for (let i = 0; i < array2.length; i++) {
+        //     console.log(array2[i]);
+        // }
+
+
+        // New
+
+        array2.map(item => {
+            console.log(item);
+        })
+
+
+
+
+        // array2.map((item, index, arr) => {
+        //     // console.log(item);
+        //     // console.log(index);
+        //    // console.log(arr);
+
+        // })
+
+        let images = ['Apple.jpg', 'Sasha.jpg', 'Phone.jpg', 'Apple.jpg', 'Sasha.jpg', 'Phone.jpg', 'Apple.jpg', 'Sasha.jpg', 'Phone.jpg']
+        let names = ['Apple', 'Sasha', 'Phone', 'Apple', 'Sasha', 'Phone', 'Apple', 'Sasha', 'Phone']
+
+        names.map((item, index) => {
+
+            out.innerHTML += `
+            <div class="item">
+                <img src="./img/${images[index]}" alt="${images[index]}">
+                <h3>${item}</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            `
+        })
+
+
+    </script>
+</body>
+
+</html>
