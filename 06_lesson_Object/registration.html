@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <input class="inp1" type="text" placeholder="Login"> <br>
+    <!-- <input type="email" placeholder="Email"> <br> -->
+    <input class="inp2" type="password" placeholder="Password"> <br>
+    <button class="btn">Registration</button>
+    <span class="error"></span>
+    <br>
+    <span>
+        Users: <span class="users">0</span>
+    </span>
+    <script>
+
+        let inp = document.querySelector('.inp1')
+        let inp2 = document.querySelector('.inp2')
+        let btn = document.querySelector('.btn')
+        let error = document.querySelector('.error')
+
+        let usersOut = document.querySelector('.users')
+
+        let users = []
+
+
+        let massege = {
+            en: {
+                error: 'Заповніть всі поля'
+            }
+        }
+
+        btn.onclick = () => {
+            if (inp.value && inp2.value) {
+                error.innerHTML = `<span class="green">Користувач зарегестрований</span>`
+                users.push({
+                    name: "Sasha",
+                    password: 'admin'
+                })
+
+                usersOut.innerHTML = users.length
+                console.log(users);
+
+            } else {
+                console.log('Заповніть всі поля')
+                error.innerHTML = `<span class="red">${massege.en.error}</span>`
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>

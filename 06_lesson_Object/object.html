@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input class="inp1" type="text" placeholder="Login"> <br>
+    <!-- <input type="email" placeholder="Email"> <br> -->
+    <input class="inp2" type="password" placeholder="Password"> <br>
+    <button class="btn">Registration</button>
+
+    <script>
+
+        let sasha = {
+            name: 'Sasha',
+            age: 1984,
+            photo: ['img1', 'img3', 'img2'],
+            patents: [
+                {
+                    name: "Kolya"
+                },
+                {
+                    name: "Sveta"
+                }
+            ],
+            isMaried: false,
+            actualAge() {
+
+                return new Date().getFullYear() - this.age;
+            }
+
+        }
+
+
+        sasha.age = 1990
+        sasha.password = "dasdDDW#$##"
+        delete sasha.password
+
+        console.log(sasha);
+
+
+        let olha = {}
+
+        olha.name = "Olha"
+
+        console.log(olha);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select class="sel">
+    </select>
+    <button class=btn>Search</button>
+
+
+
+    <script>
+        let sel = document.querySelector('.sel')
+        let btn = document.querySelector('.btn')
+
+        let arr = ["User1", "User2", "User3"]
+
+
+        // Прибираэ дублыкати
+        // let testSet = new Set(arr)
+        // console.log(testSet);
+
+
+
+        arr.map(item => {
+            sel.innerHTML += `<option value="${item}">${item}</option>`
+        })
+
+
+
+        btn.onclick = () => {
+            arr.map(item => {
+                if (item === sel.value) {
+                    console.log(item);
+
+                }
+            })
+        }
+
+
+
+    </script>
+</body>
+
+</html>
