@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .item {
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
+        .out {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .item--green {
+            border: 1px solid aqua;
+        }
+
+        .item--red {
+            border: 1px solid brown;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Shop <b>Cart: <span class="cart">0</span></b> <button>Show</button></h1>
+    <div class="out">
+
+        <!-- <div class="item">
+            <p>Категорія: Електроніка</p>
+            <img src="" alt="">
+            <h3>Смартфон Samsung Galaxy A54</h3>
+            <p>Внаявності</p>
+            <p><b>12999</b> USD</p>
+        </div> -->
+    </div>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg',
+                name: "Смартфон Samsung Galaxy A54",
+                price: 12999,
+                category: "Електроніка",
+                inStock: true
+            },
+            {
+                id: 2,
+                img: 'https://content1.rozetka.com.ua/goods/images/big_tile/510148789.jpg',
+                name: "Ноутбук Lenovo IdeaPad 3",
+                price: 20999,
+                category: "Електроніка",
+                inStock: false
+            },
+            { id: 3, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Навушники JBL Tune 510BT", price: 1499, category: "Аудіо", inStock: true },
+            { id: 4, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Пральна машина Bosch", price: 14999, category: "Побутова техніка", inStock: true },
+            { id: 5, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Книга 'Шантарам'", price: 399, category: "Книги", inStock: true },
+            { id: 6, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Електросамокат Xiaomi Mi Scooter", price: 17999, category: "Транспорт", inStock: false },
+            { id: 7, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Монітор LG 24MK430H", price: 3999, category: "Електроніка", inStock: true },
+            { id: 8, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Кавоварка DeLonghi Magnifica", price: 10499, category: "Побутова техніка", inStock: true },
+            { id: 9, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Спортивний годинник Garmin Forerunner 45", price: 6999, category: "Гаджети", inStock: false },
+            { id: 10, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Мишка Logitech MX Master 3", price: 2999, category: "Комп’ютерна периферія", inStock: true }
+        ];
+
+        let out = document.querySelector('.out')
+        let cartOut = document.querySelector('.cart')
+        let cartArr = []
+
+
+        function createCard(data) {
+
+            let div = document.createElement('div')
+            div.classList.add('item', data.inStock ? "item--green" : 'item--red')
+
+            let category = document.createElement('p')
+            category.classList.add('item__category')
+            category.innerHTML = `Категорія: ${data.category}`
+
+            let img = document.createElement('img')
+            img.classList.add('item__img')
+            img.alt = 'img'
+            img.src = data.img
+            img.width = '180'
+
+            let title = document.createElement('h2')
+            title.classList.add('item__title')
+            title.innerHTML = data.name
+
+            let stock = document.createElement('p')
+            stock.classList.add('item__text', data.inStock ? "green" : 'red')
+            stock.innerHTML = data.inStock ? "в Наявності" : 'Немае'
+
+            let price = document.createElement('b')
+            price.classList.add('item__price')
+            price.innerHTML = `${data.price} USD`
+
+
+            let buttons = document.createElement('div')
+            buttons.classList.add('item__buttons')
+
+
+            let cart = document.createElement('button')
+            cart.classList.add('item__cart')
+            cart.innerHTML = 'В Корзину'
+            cart.onclick = () => {
+                cartArr.push(data)
+                cartOut.innerHTML = cartArr.length
+            }
+
+            let buy = document.createElement('button')
+            buy.classList.add('item__buy')
+            buy.innerHTML = 'Придбати'
+
+            buttons.append(buy, cart)
+            div.append(category, img, title, stock, price, buttons)
+
+
+
+
+            return div
+        }
+        console.log(products);
+        // item.category
+
+        products.map(item => out.append(createCard(item)))
+
+
+
+    </script>
+</body>
+
+</html>

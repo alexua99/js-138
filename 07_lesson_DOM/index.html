@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h2>DOM</h2>
+    <button>Test</button>
+    <button class="test">Test </button>
+    <button id="test">Test</button>
+
+
+    <div class="out">
+
+    </div>
+
+    <div class="out2">
+
+    </div>
+    <button class="btn2">add</button>
+
+
+    <script>
+        let btn = document.querySelector('button')
+
+        // Классы
+        btn.classList.add('active')
+        btn.classList.remove('active')
+        btn.classList.toggle('active')
+
+        // Стилі
+        btn.style.border = '1px solid red'
+        //console.log(btn.style)
+
+        // дата атрибути
+        btn.setAttribute('data', 'test')
+        btn.getAttribute('data')
+
+        // Знаходити контент
+        btn.innerHTML
+        //console.log(btn.innerHTML);
+
+
+        // Створення Елементів
+        let out = document.querySelector('.out')
+
+        // Old
+        // out.innerHTML += `
+        //   <li>Test</li>
+        // `
+
+        let button = document.createElement('button')
+        button.innerHTML = "Submit"
+        button.classList.add('button')
+        button.onclick = () => {
+            button.classList.toggle('active')
+        }
+
+        let buttonSpan = document.createElement('span')
+        buttonSpan.innerHTML = '😀'
+
+        let buttonBold = document.createElement('b')
+        buttonBold.innerHTML = "Go"
+
+        button.append(buttonSpan, buttonBold)
+
+        out.append(button)
+
+
+        // створити кнопку Add User 
+        // Коли клікаємо по кнопці
+        // додаемо в .out <h2>Sasha</h2>
+
+
+        let out2 = document.querySelector('.out2')
+        let btn2 = document.querySelector('.btn2')
+
+        let user = true
+
+        btn2.onclick = () => {
+            if (user) {
+                out2.append(creatTtitle('Hello Sasha', 'green'))
+            } else {
+                out2.append(creatTtitle('NOt Regisrt', 'red'))
+            }
+
+        }
+
+        function creatTtitle(text, className) {
+            let h2 = document.createElement('h2')
+            h2.classList.add('title', className)
+            h2.innerHTML = text
+
+            return h2
+        }
+
+
+        let users2 = ['Sveta', 'Sasha', 'Olha', 'Kolya'];
+
+
+        let users3 = [
+            {
+                name: 'Sveta',
+                isLogin: true
+            },
+            {
+                name: 'Sasha',
+                isLogin: false
+            },
+            {
+                name: 'Olha',
+                isLogin: false
+            },
+            {
+                name: 'Kolya',
+                isLogin: true
+            },
+            {
+                name: 'Alex',
+                isLogin: false
+            }
+        ]
+
+
+
+    </script>
+</body>
+
+</html>
