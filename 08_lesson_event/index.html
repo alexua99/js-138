@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {}
+
+        .boll {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <button class="btn">tes1</button> -->
+
+    <input class="inp1" type="text">
+
+    <select class="sel">
+        <option value="">--</option>
+        <option value="Електроніка">Електроніка</option>
+        <option value="Аудіо">Аудіо</option>
+        <option value="Гаджети">Гаджети</option>
+    </select>
+
+    <label for="chec1">18+</label>
+    <input id="chec1" type="checkbox">
+    <span class="out"></span>
+    <div class="out2"></div>
+
+    <input class="inp2" type="text">
+    <div class="out3"></div>
+
+    <div class="box">
+        <div class="boll"></div>
+    </div>
+    <script>
+
+        // let btn = document.querySelector('.btn')
+        let inp1 = document.querySelector('.inp1')
+        let chec1 = document.querySelector('#chec1')
+        let sel = document.querySelector('.sel')
+        let out = document.querySelector('.out')
+        let out2 = document.querySelector('.out2')
+        let out3 = document.querySelector('.out3')
+
+
+        const products = [
+            {
+                id: 1,
+                img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg',
+                name: "Смартфон Samsung Galaxy A54",
+                price: 12999,
+                category: "Електроніка",
+                inStock: true
+            },
+            {
+                id: 2,
+                img: 'https://content1.rozetka.com.ua/goods/images/big_tile/510148789.jpg',
+                name: "Ноутбук Lenovo IdeaPad 3",
+                price: 20999,
+                category: "Електроніка",
+                inStock: false
+            },
+            { id: 3, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Навушники JBL Tune 510BT", price: 1499, category: "Аудіо", inStock: true },
+            { id: 4, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Пральна машина Bosch", price: 14999, category: "Побутова техніка", inStock: true },
+            { id: 5, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Книга 'Шантарам'", price: 399, category: "Книги", inStock: true },
+            { id: 6, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Електросамокат Xiaomi Mi Scooter", price: 17999, category: "Транспорт", inStock: false },
+            { id: 7, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Монітор LG 24MK430H", price: 3999, category: "Електроніка", inStock: true },
+            { id: 8, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Кавоварка DeLonghi Magnifica", price: 10499, category: "Побутова техніка", inStock: true },
+            { id: 9, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Спортивний годинник Garmin Forerunner 45", price: 6999, category: "Гаджети", inStock: false },
+            { id: 10, img: 'https://content2.rozetka.com.ua/goods/images/big_tile/487792100.jpg', name: "Мишка Logitech MX Master 3", price: 2999, category: "Комп’ютерна периферія", inStock: true }
+        ];
+
+
+        function listItem() {
+            out2.innerHTML = ""
+            products.map(item => {
+                out2.innerHTML += `<h4>${item.name}</h4>`
+            })
+
+        }
+        listItem()
+
+        function category(inpVal) {
+            out2.innerHTML = ""
+
+            if (inpVal) {
+                products.map(item => {
+                    if (item.category === inpVal) {
+                        out2.innerHTML += `<h4>${item.name}</h4>`
+                    }
+
+                })
+            } else {
+                listItem()
+            }
+
+        }
+
+        // btn.onclick = () => {
+        //     console.log('test 1')
+        // }
+
+        // btn.onclick = () => {
+        //     console.log('test 2')
+        // }
+
+
+        // btn.addEventListener('click', () => {
+        //     console.log('test 1')
+        // })
+
+        // btn.addEventListener('click', () => {
+        //     console.log('test 2')
+        // })
+
+        // inp1.addEventListener('change', () => {
+        //     console.log(inp1.value)
+        // })
+
+        sel.addEventListener('change', () => {
+            console.log(sel.value)
+            category(sel.value)
+        })
+
+        chec1.addEventListener('change', () => {
+            if (chec1.checked) {
+                out.innerHTML = "Проходиш"
+            } else {
+                out.innerHTML = "Не Проходиш"
+            }
+        })
+
+        chec1.addEventListener('change', () => {
+            // Умова
+        })
+
+        inp1.addEventListener('keyup', () => {
+            console.log('TEst')
+        })
+
+
+
+
+        // V1
+        let inp2 = document.querySelector('.inp2')
+        let name = "Sasha"
+
+
+        //console.log(name.includes('as'))
+        // console.log(name.indexOf('a'))
+
+        // inp2.addEventListener('keyup', () => {
+        //     let newName = name.toLowerCase()
+        //     let newVal = inp2.value.toLowerCase()
+
+        //     console.log(newName.includes(newVal))
+        // })
+
+
+        // V2
+        let out4 = document.querySelector('.out3')
+        let name2 = ["Sasha", "Sveta", "Kolya", "Alex"]
+
+
+
+        inp2.addEventListener('keyup', () => {
+            out4.innerHTML = ""
+            name2.map(item => {
+                if (item.includes(inp2.value)) {
+                    out4.innerHTML += `<h5>${item}</h5>`
+                }
+            })
+
+        })
+
+        let ball = document.querySelector('.boll')
+        let box = document.querySelector('.box')
+        let move = 0;
+
+        window.addEventListener('keyup', function (event) {
+            console.log(event)
+            if (event.code == 'ArrowRight') {
+                console.log('Право')
+                console.log(ball.style);
+                move = move + 10
+                ball.style.transform = `translateX(${move}px)`
+            } else if (event.code == 'ArrowLeft') {
+                move = move - 10
+                ball.style.transform = `translateX(${move}px)`
+            }
+            // out4.innerHTML += event.key
+        })
+        // clientX
+        // window.addEventListener('mousemove', function (event) {
+        //     console.log(event)
+        //     ball.style.transform = `translate(${(event.clientX - 100) / 10}px, ${(event.clientY - 100) / 10}px)`
+        // })
+
+
+        function ballMove() {
+            window.addEventListener('mousemove', function (event) {
+                console.log(event)
+                ball.style.transform = `translate(${event.clientX - 50}px, ${event.clientY - 50}px)`
+            })
+        }
+
+        ball.addEventListener('click', ballMove)
+
+        ball.removeEventListener('click', ballMove)
+
+
+
+    </script>
+</body>
+
+</html>
