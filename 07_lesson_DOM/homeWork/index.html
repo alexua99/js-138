@@ -40,15 +40,12 @@
 <body>
 
     <header>
-        <select>
-            сюди взяти і вивести карегорії з масиву products
-            + прибрати дублікати методом new Set()
+        <select class="sel">
 
         </select>
-        <button>select</button>
 
-        <input type="text" placeholder="Search">
-        <button>search</button>
+        <input class="search" type="text" placeholder="Search">
+
 
         Єкстра
         <label for="inp1">
@@ -57,7 +54,7 @@
 
 
         <label for="inp2"> Немае <input id="inp1" type="checkbox"></label>
-        <button>Sort</button>
+
 
 
     </header>
@@ -165,7 +162,51 @@
         products.map(item => out.append(createCard(item)))
 
 
+        function createOption() {
+            let select = document.querySelector('.sel')
 
+            let category = new Set(products.map(item => item.category))
+
+            category.forEach(item => {
+                let option = document.createElement('option')
+                option.value = item
+                option.innerHTML = item
+
+                select.append(option)
+            })
+
+            select.addEventListener('change', () => {
+                out.innerHTML = ''
+
+                products.map(item => {
+                    if (select.value == item.category) {
+                        out.append(createCard(item))
+                    }
+                })
+            })
+        }
+
+        function search() {
+            let search = document.querySelector('.search')
+
+            search.addEventListener('keyup', () => {
+                out.innerHTML = ''
+
+                products.map(item => {
+                    if (item.name.includes(search.value)) {
+                        out.append(createCard(item))
+                    }
+                })
+            })
+        }
+
+
+
+
+
+
+        search()
+        createOption()
     </script>
 </body>
 
