@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let array = ['test', 'test 1', 'test 2', 'test 3']
+        let obj = {
+            name: "sasha",
+            age: 29
+        }
+
+        localStorage.setItem('arr', array)
+        localStorage.setItem('obj', obj)
+
+
+
+
+        console.log(typeof localStorage.getItem('arr'));
+        console.log(typeof localStorage.getItem('obj'));
+
+
+        // Як зберігати ОБекти і Массиви
+        localStorage.setItem('arr2', JSON.stringify(array))
+
+        // оотримуемо String
+        let arr2 = localStorage.getItem('arr2')
+        console.log(arr2);
+
+        // Перетворюемо строку на обект
+        let newArr = JSON.parse(arr2)
+
+
+
+        console.log(newArr);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

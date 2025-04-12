@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="text">
+    <button class="btn">res</button>
+    <!-- <button class="btnSave">last save</button> -->
+
+    <div class="out"></div>
+
+
+    <!-- <div class="calc">
+        <input width="40" type="text" class="inp1"> + <input type="text" width="40" class="inp2"> = <span
+            class="out2"></span>
+        <br>
+        <button class="btn3">res</button>
+    </div> -->
+
+    <script>
+        // Створюемо 
+        localStorage.setItem('theme', 'test')
+
+        // Знаходимо
+        localStorage.getItem('theme')
+
+
+        // Видалити всі
+        localStorage.clear()
+
+        // Видалити по ключу
+        localStorage.removeItem('theme')
+
+
+        // let inp1 = document.querySelector('.inp1')
+        // let inp2 = document.querySelector('.inp2')
+        // let btn3 = document.querySelector('.btn3')
+        // let out2 = document.querySelector('.out2')
+
+        // btn3.addEventListener('click', () => {
+        //     console.log("test");
+
+        // })
+
+        let out = document.querySelector('.out')
+        let btn = document.querySelector('.btn')
+        let btnSave = document.querySelector('.btnSave')
+        let inp = document.querySelector('input')
+
+        out.innerHTML = localStorage.getItem('input')
+        inp.value = localStorage.getItem('input')
+
+        btn.addEventListener('click', () => {
+            localStorage.setItem('input', inp.value)
+            out.innerHTML = inp.value
+        })
+
+        // btnSave.addEventListener('click', () => {
+        //     out.innerHTML = localStorage.getItem('input')
+        // })
+        // localStorage.setItem('theme', 'test')
+
+
+        // console.log(localStorage.getItem('theme'));
+
+        // out.innerHTML = localStorage.getItem('theme')
+    </script>
+</body>
+
+</html>

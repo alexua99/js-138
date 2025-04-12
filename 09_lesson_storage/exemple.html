@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .out {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 10px;
+
+        }
+
+        .item {
+            border: 1px solid;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .item:hover {
+            background-color: aqua;
+        }
+
+        .item:active {
+            background-color: aquamarine;
+        }
+
+        .cart {
+            padding: 10px;
+            background-color: beige;
+            width: fit-content;
+            cursor: pointer;
+        }
+
+        .cart:hover {
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="out">
+
+    </div>
+
+    <div class="cart">
+
+    </div>
+    <div class="cart-out">
+
+    </div>
+
+    <script>
+
+        let out = document.querySelector('.out')
+        let cartCount = document.querySelector('.cart')
+        let cartOut = document.querySelector('.cart-out')
+
+        let items = [
+            {
+                name: "Sasha",
+                age: 22
+            },
+            {
+                name: "Sveta",
+                age: 21
+            },
+            {
+                name: "Kolya",
+                age: 16
+            },
+            {
+                name: "ALex",
+                age: 23
+            },
+            {
+                name: "Jon",
+                age: 34
+            },
+            {
+                name: "Ala",
+                age: 18
+            },
+        ]
+
+        let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+
+
+
+        cartCount.innerHTML = cart.length
+        items.map(item => {
+            let user = document.createElement('div')
+            user.classList.add('item')
+            user.addEventListener('click', () => {
+
+                cart.push(item)
+                cartCount.innerHTML = cart.length
+                localStorage.setItem('cart', JSON.stringify(cart))
+                console.log(cart);
+
+            })
+
+
+            let name = document.createElement('h3')
+            name.innerHTML = item.name
+            let age = document.createElement('p')
+            age.innerHTML = item.age
+
+            user.append(name, age)
+            out.append(user)
+        })
+
+
+        cartCount.addEventListener('click', () => {
+            cart.map(item => {
+                cartOut.innerHTML += `<h5>${item.name} == ${item.age}</h5>`
+            })
+        })
+    </script>
+
+</body>
+
+</html>
