@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .container {
+            overflow: hidden;
+        }
+
+        .hero__carusel-row {
+            display: flex;
+        }
+
+        .hero__carusel-item {
+            background-color: antiquewhite;
+            flex-shrink: 0;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .hero__carusel-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            padding: 10px 0;
+            flex-grow: 1;
+        }
+
+        .hero__carusel {
+            position: relative;
+        }
+
+        .swiper-pagination-bullet {
+            display: block;
+            border-radius: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet:hover {
+            background-color: aquamarine;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: red;
+        }
+
+        .hero__button {
+            position: absolute;
+            left: 0;
+            top: 80px;
+
+            width: 30px;
+            height: 30px;
+            z-index: 2;
+
+        }
+
+        .swiper-button-next {
+            left: auto;
+            right: 0px;
+        }
+
+        .swiper-button-prev img {
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <header>
+            <div class="container">
+                <h3>Header</h3>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Title</h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, magnam! Tempora quisquam ipsa natus.
+                    Rerum numquam non suscipit reprehenderit aperiam!
+                </p>
+
+
+                <!-- 
+                 Slider here -->
+                <div class="swiper hero__carusel">
+                    <div class="swiper-wrapper hero__carusel-row">
+                        <!-- <div class="swiper-slide hero__carusel-item">Slide 1</div>
+                        <div class="swiper-slide hero__carusel-item">Slide 2</div>
+                        <div class="swiper-slide hero__carusel-item">Slide 3</div>
+                        <div class="swiper-slide hero__carusel-item">Slide 1</div>
+                        <div class="swiper-slide hero__carusel-item">Slide 2</div>
+                        <div class="swiper-slide hero__carusel-item">Slide 3</div> -->
+
+                    </div>
+                    <div class="hero__button swiper-button-next">
+                        <img src="./arrow.svg" alt="">
+                    </div>
+                    <div class="hero__button swiper-button-prev">
+                        <img src="./arrow.svg" alt="">
+                    </div>
+                    <div class="hero__carusel-pagination"></div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".hero__carusel", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".hero__carusel-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                767: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                991: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            },
+        });
+    </script>
+
+    <script>
+        const out = document.querySelector('.hero__carusel-row')
+        out.innerHTML += ` <div class="swiper-slide hero__carusel-item">Slide 1</div>`
+        out.innerHTML += ` <div class="swiper-slide hero__carusel-item">Slide 1</div>`
+        out.innerHTML += ` <div class="swiper-slide hero__carusel-item">Slide 1</div>`
+        out.innerHTML += ` <div class="swiper-slide hero__carusel-item">Slide 1</div>`
+        out.innerHTML += ` <div class="swiper-slide hero__carusel-item">Slide 1</div>`
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="phone">+38 999 22213123</div>
+    <button class="btn">Copy</button>
+
+    <script>
+        let name = 'Sasha'
+
+        let btn = document.querySelector('.btn')
+        let phone = document.querySelector('.phone')
+
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(name)
+        })
+
+        phone.addEventListener('click', () => {
+            navigator.clipboard.writeText(phone.innerHTML)
+            alert('Телефон copy: ' + phone.innerHTML)
+        })
+
+    </script>
+</body>
+
+</html>
