@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form">
+        <input type="text" placeholder="Name" class='inp'>
+        <input type="number" placeholder="Age" class='inp2'>
+        <button class='btn'>Add</button>
+        <button class='btn2'>Show <span>0</span></button>
+        додати Користувачив: <sapn>0</sapn>
+        <span class='out'></span>
+
+    </div>
+
+    <script>
+        let users = [99, 2, 3, 4, 5, 16];
+
+        console.log(users[0])
+        console.log(users[1])
+
+        users.push(17)
+        console.log(users)
+
+        users.map(item => {
+            console.log(item)
+        })
+
+
+        let apple = {
+            name: "Sasha",
+            age: 22
+        };
+
+        apple.email = "Test@Sasha.com"
+
+        console.log(apple.email)
+
+        let arr = []
+
+        let inp = document.querySelector('.inp')
+        let inp2 = document.querySelector('.inp2')
+        let out = document.querySelector('.out')
+
+        let btn = document.querySelector('.btn')
+
+
+        // Task Number 2
+        // створити Функцію createItem(name, age) в out.append() за допомогою функції listUser()
+
+        function listUser(data) {
+            data.map(item => {
+                out.append(createItem(item))
+            })
+        }
+
+        listUser(arr)
+
+        function createItem(item) {
+            let div = document.createElement('div')
+            div.classList.add('row')
+
+            let name = document.createElement('h5')
+            name.innerHTML = item.name
+            let age = document.createElement('h5')
+            age.innerHTML = item.age
+
+            let inp = document.createElement('input')
+            inp.type = "checkbox"
+            // додати в обект isFavorit: true
+            let btn = document.createElement('button')
+            btn.innerHTML = "Save"
+            // add SaveArr і зберігати в Локал сторедж
+
+            div.append(inp, name, age, btn)
+            return div
+        }
+
+        btn.addEventListener('click', () => {
+            out.innerHTML = ''
+
+            arr.push({
+                name: inp.value,
+                age: +inp2.value,
+            })
+
+            listUser(arr)
+        })
+
+
+    </script>
+</body>
+
+</html>

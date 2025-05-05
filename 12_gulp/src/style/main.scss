@@ -1,0 +1,8 @@
+@use './pages/home.scss';
+
+$red: red;
+
+h2 {
+    color: $red;
+    text-align: center;
+}
