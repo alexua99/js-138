@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="out">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, rerum.</p>
+
+    </div>
+
+    <script>
+
+
+
+        // Функціональний Компонент
+        let out = document.querySelector('.out')
+
+        let obj = [
+            {
+                name: 'sasha',
+                age: 22
+            },
+            {
+                name: 'sasha 2',
+                age: 21
+            }
+        ]
+
+        function div(item) {
+            let div = document.createElement('div')
+            div.innerHTML = ` Hello ${item.name} age: ${item.age}`
+
+            return div
+        }
+        //out.append(div(obj[1]))
+
+        class creatUser {
+            constructor(item) {
+                this.name = item.name
+                this.age = item.age
+            }
+
+            createElement() {
+                let div = document.createElement('div')
+                div.innerHTML = ` Hello ${this.name} age: ${this.age}`
+
+                return div
+            }
+
+        }
+
+        let user2 = new creatUser(obj[1])
+
+        out.append(user2.createElement())
+
+        class NewCreate extends creatUser {
+            constructor(item) {
+                super(item)
+            }
+            createElement() {
+                super.createElement()
+            }
+        }
+
+        let user3 = new NewCreate(obj[1])
+
+        console.log(user3);
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
