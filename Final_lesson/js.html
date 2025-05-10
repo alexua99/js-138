@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select class="option">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <input type="text" placeholder="Name" class="inp">
+    <input type="checkbox" class="chec">
+    <button class="btn">Add</button>
+
+    <script>
+
+        // Типи данних
+
+        let str = "Sasha"
+        let num = 12
+
+        console.log(+num);
+
+
+        // true / false
+        if (num) {
+            console.log(+num);
+        }
+
+        if (num > 18) {
+            console.log(+num);
+        }
+
+        if (num < 18) {
+            console.log(+num);
+        }
+
+        if (num <= 18) {
+            console.log(+num);
+        }
+
+        // и && /  || або
+
+        let user = "name"
+        let pas = 123
+
+        // и && 
+        // true    true
+        if (user && pas) {
+            console.log("login");
+        }
+
+        // и || 
+        // true   
+        if (user || pas) {
+            console.log("login");
+        }
+
+
+
+        let arr = [1, 2, 3, 4]
+        console.log(arr[0]);
+        console.log(arr[arr.length - 1]);
+
+        arr.map(item => {
+            console.log(item);
+        })
+
+        arr.forEach(item => {
+            console.log(item);
+        })
+
+        arr.push(5)
+
+        // Видалити Останій
+        arr.pop()
+
+        // Видалити
+        arr.splice(1, 1)
+
+
+        let obj = {
+            name: 'sasha'
+        }
+
+        obj.age = 22
+
+        console.log(obj);
+        console.log(obj.name);
+
+        let name = "Sasha"
+        // Знайти букви
+        console.log(name.includes('sh'));
+
+        // 
+
+        // Виконує
+        function res(name) {
+            console.log(name)
+            console.log(test2(2, 6));
+        }
+
+
+        // Повертає
+        function test2(num1, num2) {
+            return num1 + num2
+        }
+
+
+        // Події 
+        let btn = document.querySelector('.btn')
+
+        btn.addEventListener('click', () => {
+            res('Sasha')
+        })
+
+
+        // DOM
+        let option = document.querySelector('.option')
+        let inp = document.querySelector('.inp')
+        let chec = document.querySelector('.chec')
+
+
+        // Події
+        btn.addEventListener('click', () => {
+            console.log(option);
+            console.log(inp.value)
+            console.log(chec.checked);
+        })
+
+        // option.addEventListener('change', () => {
+        //     console.log(option);
+        // })
+
+        // () => { }
+    </script>
+</body>
+
+</html>

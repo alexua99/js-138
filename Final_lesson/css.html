@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .font {
+
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            font-family: 'Segoe UI', serif;
+            font-size: 20px;
+            line-height: 1.2;
+            text-align: center;
+            color: red;
+
+        }
+
+        .block {
+            display: block;
+            display: inline;
+
+            width: 100%;
+            height: 100px;
+
+            max-width: 500px;
+
+            padding: 10px;
+            margin: 10px;
+
+            border: 1px solid;
+
+            box-sizing: border-box;
+
+        }
+
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: row;
+
+
+            flex-shrink: 1;
+            flex-grow: 0;
+
+            flex-basis: 100px;
+            /* розмір по основній осі */
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .position {
+
+            position: relative;
+            position: absolute;
+            position: fixed;
+
+            right: 0;
+            bottom: 0;
+
+
+            /* center  */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+
+        /* Mobile first */
+        /* Tablet */
+        @media(min-width: 767px) {}
+
+        /* Desctop */
+        @media(min-width: 1200px) {}
+
+        /* Desctop first */
+        /* Tablet */
+        @media(max-width: 1200px) {}
+
+        /* mob */
+        @media(max-width: 767px) {}
+    </style>
+</head>
+
+<body>
+    <div class="block">
+
+    </div>
+    <div class="block">
+
+    </div>
+</body>
+
+</html>

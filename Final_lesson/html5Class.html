@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+        /*
+       
+       Класи
+
+       Global calss
+       Голбальні класи щоб їх використовувати по свсьому сайту
+
+       .container
+       .title
+       .button
+       .text
+
+       Класси секцій
+       .header
+       .hero 
+        
+       .contact
+       .footer
+
+       Модифікатор:
+       .active
+       .visible
+
+       Atomic CSS
+       .text-center {}
+       .text-left {}
+
+
+       BEM 
+
+       Блое: .hero
+
+       Єлемент: .hero__container, .hero__title, .hero__img-line, .hero__img-line-top
+
+       Модифікатор: .hero--dark, .hero__container--row, .hero__img-line--active
+       
+
+       .hero {
+
+        &__container {
+          
+         ---- code ----
+
+         &--row {
+          ---- code ----
+         }
+        
+        }
+       }
+       
+       */
+
+        .title {
+            font-size: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header></header>
+
+        <section class="hero hero--dark">
+
+            <div class="container hero__conteiner">
+                <h2 class="title hero__title hero__title--alert">test</h2>
+
+                <div class="hero__images">
+                    <img class="hero__img" src="" alt="">
+                </div>
+                <button class="button hero__btn">add</button>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="title">test</h2>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2 class="title">test</h2>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2 class="title">test</h2>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
